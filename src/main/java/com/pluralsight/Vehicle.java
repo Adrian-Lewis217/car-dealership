@@ -25,7 +25,10 @@ public class Vehicle {
     }
 
     // Getter
+
     // Setter
+
     // Methods
+
     // ToString
 }

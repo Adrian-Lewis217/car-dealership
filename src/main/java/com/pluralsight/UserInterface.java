@@ -11,7 +11,9 @@ public class UserInterface {
     }
 
     // Getter
+
     // Setter
+
     // Methods
     public static void display(){}
 

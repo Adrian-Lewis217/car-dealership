@@ -19,17 +19,36 @@ public class Dealership {
         this.name = name;
         this.address = address;
         this.phone = phone;
+        ArrayList<Vehicle> inventory = new ArrayList<>();
     }
 
     // Getter
     // Setter
     // Methods
-    public static int getVehiclesByPrice(min,max){}
-    public static String getVehiclesByMakeModel(make,model){}
-    public static int getVehiclesByYear(min,max){}
-    public static String getVehiclesByColor(color){}
-    public static int getVehiclesByMileage(min,max){}
-    public static String[] getVehiclesByType(vehicleType){}
+    public static int getVehiclesByPrice(min,max){
+        return null;
+    }
+
+    public static String getVehiclesByMakeModel(make,model){
+        return null;
+    }
+
+    public static int getVehiclesByYear(min,max){
+        return null;
+    }
+
+    public static String getVehiclesByColor(color){
+        return null;
+    }
+
+    public static int getVehiclesByMileage(min,max){
+        return null;
+    }
+
+    public static String[] getVehiclesByType(vehicleType){
+        return null;
+    }
+
     public static void getAllVehicles(String fileName){
         // Display all vehicles in file
         try {
@@ -101,6 +120,7 @@ public class Dealership {
             System.out.println("ERROR: " + e.getMessage());
         }
     }
+
     public static void removeVehicles(vehicle){}
     // ToString
 }
