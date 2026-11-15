@@ -11,8 +11,8 @@ public class Vehicle {
     private String color;
     private int odometer;
     private BigDecimal price;
-    // Constructor
 
+    // Constructor
     public Vehicle(int vin, int year, String make, String model, String[] vehicleType, String color, int odometer, BigDecimal price) {
         this.vin = vin;
         this.year = year;

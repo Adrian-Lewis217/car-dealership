@@ -1,15 +1,18 @@
 package com.pluralsight;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Dealership {
     private String name;
     private String address;
     private String phone;
-    private ArrayList<Vehicle> inventory = new ArrayList<>();
+    private static ArrayList<Vehicle> inventory = new ArrayList<>();
     // Constructor
 
     public Dealership(String name, String address, String phone) {
@@ -47,12 +50,12 @@ public class Dealership {
                 }
 
                 int vin = Integer.parseInt(sections[0]);
-                int year = Integer.parseInt(sections[1]);;
+                int year = Integer.parseInt(sections[1]);
                 String make = sections[2];
                 String model = sections[3];
-                String[] vehicleType;
+                String[] vehicleType = new String[4];
                 String color = sections[5];
-                int odometer = Integer.parseInt(sections[6]);;
+                int odometer = Integer.parseInt(sections[6]);
                 BigDecimal price = BigDecimal.valueOf(Double.parseDouble(sections[7]));
                 inventory.add(new Vehicle(vin,year,make,model,vehicleType,color,odometer,price));
             }
@@ -63,7 +66,40 @@ public class Dealership {
         }
     }
     public static void addVehicles(vehicle){
+        Scanner input = new Scanner(System.in);
+        BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, true));
 
+        // prompt user for vehicle info
+        try {
+
+        System.out.print("Enter Vehicle's VIN: ");
+        int vin = input.nextInt();
+        System.out.print("Enter Vehicle's Year: ");
+        int year = input.nextInt();
+        input.nextLine();
+        System.out.print("Enter The Make of Vehicle: ");
+        String make = input.nextLine();
+        System.out.print("Enter The Model of Vehicle: ");
+        String model = input.nextLine();
+        System.out.print("Enter Vehicle's Type: ");
+        String[] vehicleType = new String[]{input.nextLine()};
+        System.out.print("Enter Vehicle's Color: ");
+        String color = input.nextLine();
+        System.out.print("Enter Vehicle's Odometer: ");
+        int odometer = input.nextInt();
+        input.nextLine();
+        System.out.print("Enter Vehicle's Price: ");
+        BigDecimal price = input.nextBigDecimal();
+        input.nextLine();
+
+        inventory.add(new Vehicle(vin,year,make,model,vehicleType,color,odometer,price));
+        bw.write(vin + "|" + year + "|"  + make + "|" + model + "|" + vehicleType + "|" + color + "|" + odometer + "|" + price);
+        bw.newLine();
+
+        bw.close();
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
     }
     public static void removeVehicles(vehicle){}
     // ToString
