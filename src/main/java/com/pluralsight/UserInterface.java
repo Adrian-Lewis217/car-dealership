@@ -1,7 +1,7 @@
 package com.pluralsight;
 
 public class UserInterface {
-    Dealership dealership = new Dealership();
+    private Dealership dealership = new Dealership("Potato and Tomato Used Cars","2627 John Farmer Rd","(876)-640-5210");
 
     // Constructor
 
