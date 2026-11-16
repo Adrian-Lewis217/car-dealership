@@ -66,7 +66,11 @@ public class UserInterface {
 
     public static void processGetByVehicleTypeRequest(){}
 
-    public static void processGetAllVehiclesRequest(){}
+    public static void processGetAllVehiclesRequest(){
+        // Get the full inventory from file and display all vehicles
+        ArrayList<Vehicle> inventory = Dealership.getAllVehicles("inventory.csv");
+        displayVehicles(inventory);
+    }
 
     public static void processAddVehiclesRequest(){}
 
@@ -78,7 +82,7 @@ public class UserInterface {
         this.dealership = DealershipFileManager.getDealership();
     }
     
-    private void displayVehicles(ArrayList<Vehicle> inventory){
+    private static void displayVehicles(ArrayList<Vehicle> inventory){
         // print all vehicles in inventory
         try {
             for (int i = 0; i < inventory.size() - 1; i++) {

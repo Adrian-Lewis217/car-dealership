@@ -49,7 +49,7 @@ public class Dealership {
         return null;
     }
 
-    public static void getAllVehicles(String fileName){
+    public static ArrayList<Vehicle> getAllVehicles(String fileName){
         // Display all vehicles in file
         try {
             BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -83,6 +83,8 @@ public class Dealership {
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
+
+        return null;
     }
     public static void addVehicles(vehicle){
         Scanner input = new Scanner(System.in);
