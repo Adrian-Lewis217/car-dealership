@@ -4,18 +4,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
-    private Dealership dealership;
 
     // Constructor
-
-
-    public UserInterface(Dealership dealership) {
-        this.dealership = dealership;
-    }
-
-    // Getter
-
-    // Setter
+    public UserInterface() {}
 
     // Methods
     public static void display(){
@@ -79,7 +70,7 @@ public class UserInterface {
     // Helper Methods
     private void init(){
         // use the first line of the CSV file for name
-        this.dealership = DealershipFileManager.getDealership();
+        DealershipFileManager.getDealership();
     }
     
     private static void displayVehicles(ArrayList<Vehicle> inventory){

@@ -6,12 +6,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Dealership {
     private String name;
     private String address;
     private String phone;
+    private int min;
+    private int max;
     private static ArrayList<Vehicle> inventory = new ArrayList<>();
 
     // Constructor
@@ -25,8 +28,18 @@ public class Dealership {
     // Getter
     // Setter
     // Methods
-    public static int getVehiclesByPrice(min,max){
-        return null;
+    public static List<Vehicle> getVehiclesByPrice(BigDecimal min, BigDecimal max){
+        String fileName = "";
+        getAllVehicles(fileName);
+        List<Vehicle> vehiclesPrices = new ArrayList<>();
+
+        for (Vehicle vehicle : inventory) {
+            if (vehicle.getPrice().compareTo(min) >= 0 && vehicle.getPrice().compareTo(max) <= 0){
+                vehiclesPrices.add(vehicle);
+            }
+        }
+
+        return vehiclesPrices;
     }
 
     public static String getVehiclesByMakeModel(make,model){
@@ -55,6 +68,8 @@ public class Dealership {
             BufferedReader br = new BufferedReader(new FileReader(fileName));
 
             String line;
+
+            br.readLine();
 
             while((line = br.readLine()) != null){
 
