@@ -13,8 +13,8 @@ public class Dealership {
     private String address;
     private String phone;
     private static ArrayList<Vehicle> inventory = new ArrayList<>();
-    // Constructor
 
+    // Constructor
     public Dealership(String name, String address, String phone) {
         this.name = name;
         this.address = address;

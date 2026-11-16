@@ -1,9 +1,10 @@
 package com.pluralsight;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
-    private Dealership dealership = new Dealership("Potato and Tomato Used Cars","2627 John Farmer Rd","(876)-640-5210");
+    private Dealership dealership;
 
     // Constructor
 
@@ -70,5 +71,22 @@ public class UserInterface {
     public static void processAddVehiclesRequest(){}
 
     public static void processRemoveVehiclesRequest(){}
+    
+    // Helper Methods
+    private void init(){
+        // use the first line of the CSV file for name
+        this.dealership = DealershipFileManager.getDealership();
+    }
+    
+    private void displayVehicles(ArrayList<Vehicle> inventory){
+        // print all vehicles in inventory
+        try {
+            for (int i = 0; i < inventory.size() - 1; i++) {
+                System.out.println(inventory.get(i));
+            }
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }
     // ToString
 }

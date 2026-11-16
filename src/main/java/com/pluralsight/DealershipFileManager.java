@@ -12,8 +12,10 @@ public class DealershipFileManager {
     // Setter
 
     // Methods
-    public static void getDealership(Dealership dealership){
+    public static Dealership getDealership(){
         try {
+            String fileName = "inventory.csv";
+
             BufferedReader br = new BufferedReader(new FileReader(fileName));
 
             String line;
@@ -28,13 +30,14 @@ public class DealershipFileManager {
                 ArrayList<Vehicle> inventory = new ArrayList<>();
 
                 // save the dealership from CSV file
-                dealership = new Dealership(name,address,phone);
+                //dealership = new Dealership(name,address,phone);
             }
             br.close();
 
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
+        return null;
     }
     public static void saveDealership(Dealership dealership){}
 
