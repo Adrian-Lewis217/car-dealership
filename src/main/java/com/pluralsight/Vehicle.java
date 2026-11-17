@@ -9,14 +9,14 @@ public class Vehicle {
     private int year;
     private String make;
     private String model;
-    private String[] vehicleType = {"car","truck","van"};
+    private String vehicleType;
     private String color;
     private int odometer;
     private BigDecimal price;
     private List<Vehicle> vehicles;
 
     // Constructor
-    public Vehicle(int vin, int year, String make, String model, String[] vehicleType, String color, int odometer, BigDecimal price) {
+    public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, BigDecimal price) {
         this.vin = vin;
         this.year = year;
         this.make = make;
@@ -44,7 +44,7 @@ public class Vehicle {
         return model;
     }
 
-    public String[] getVehicleType() {
+    public String getVehicleType() {
         return vehicleType;
     }
 
@@ -78,7 +78,7 @@ public class Vehicle {
         this.model = model;
     }
 
-    public void setVehicleType(String[] vehicleType) {
+    public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
     }
 
@@ -103,12 +103,13 @@ public class Vehicle {
         return "Vehicle{" +
                 "vin=" + vin +
                 ", year=" + year +
-                ", make='" + make + '|' +
-                ", model='" + model + '|' +
-                ", vehicleType=" + Arrays.toString(vehicleType) +
-                ", color='" + color + '|' +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", vehicleType='" + vehicleType + '\'' +
+                ", color='" + color + '\'' +
                 ", odometer=" + odometer +
                 ", price=" + price +
+                ", vehicles=" + vehicles +
                 '}';
     }
 }

@@ -76,7 +76,7 @@ public class UserInterface {
     private static void displayVehicles(ArrayList<Vehicle> inventory){
         // print all vehicles in inventory
         try {
-            for (int i = 0; i < inventory.size() - 1; i++) {
+            for (int i = 0; i < inventory.size(); i++) {
                 System.out.println(inventory.get(i));
             }
         } catch (Exception e) {
