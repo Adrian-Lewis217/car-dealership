@@ -59,10 +59,22 @@ public class UserInterface {
         max = input.nextBigDecimal();
         input.nextLine();
 
+        // calling getByPriceRequest() from Dealership call
         Dealership.getVehiclesByPrice(min,max);
     }
 
-    public static void processGetByMakeModelRequest(){}
+    public static void processGetByMakeModelRequest(){
+        Scanner input = new Scanner(System.in);
+
+        // Prompt user for their min and max price
+        System.out.print("Enter the make of vehicle");
+        String make = input.nextLine();
+        System.out.print("Enter the model of vehicle");
+        String model = input.nextLine();
+
+        // calling getVehiclesByMakeModel() from Dealership call
+        Dealership.getVehiclesByMakeModel(make,model);
+    }
 
     public static void processGetByYearRequest(){}
 
