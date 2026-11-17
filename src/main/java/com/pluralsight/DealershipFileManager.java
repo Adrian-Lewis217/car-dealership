@@ -1,7 +1,6 @@
 package com.pluralsight;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 
 public class DealershipFileManager {
@@ -39,7 +38,18 @@ public class DealershipFileManager {
         }
         return null;
     }
-    public static void saveDealership(Dealership dealership){}
+    public static void saveDealership(Dealership dealership){
+        String fileName = "";
+        try {
+            // Save the Dealership from the CSV File
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
+            bw.write("D & B Used Cars|111 Old Benbrook Rd|817-555-5555");
+            bw.newLine();
+        } catch (IOException e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+
+    }
 
     // ToString
 }

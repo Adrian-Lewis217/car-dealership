@@ -196,8 +196,8 @@ public class Dealership {
             inventory.removeIf(vehicle1 -> vehicle1.getVin() == vinRemove);
 
             // Rewrite the file after removing
-            bw.write("D & B Used Cars|111 Old Benbrook Rd|817-555-5555");
-            bw.newLine();
+            Dealership dealership = null;
+            DealershipFileManager.saveDealership(dealership);
 
             for (Vehicle vehicle1 : inventory) {
                 bw.write(
