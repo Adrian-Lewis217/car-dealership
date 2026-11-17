@@ -1,5 +1,6 @@
 package com.pluralsight;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -45,7 +46,21 @@ public class UserInterface {
         }
     }
 
-    public static void processGetByPriceRequest(){}
+    public static void processGetByPriceRequest(){
+        Scanner input = new Scanner(System.in);
+        BigDecimal min;
+        BigDecimal max;
+
+        // Prompt user for their min and max price
+        System.out.print("Enter your min price");
+        min = input.nextBigDecimal();
+        input.nextLine();
+        System.out.print("Enter your max price");
+        max = input.nextBigDecimal();
+        input.nextLine();
+
+        Dealership.getVehiclesByPrice(min,max);
+    }
 
     public static void processGetByMakeModelRequest(){}
 
