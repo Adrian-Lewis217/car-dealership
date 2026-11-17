@@ -95,7 +95,14 @@ public class UserInterface {
     }
 
     public static void processGetByColorRequest(){
+        Scanner input = new Scanner(System.in);
 
+        // Prompt user for color of vehicle
+        System.out.print("Enter the color of vehicle");
+        String color = input.nextLine();
+
+        // calling getVehiclesByColor() from Dealership call
+        Dealership.getVehiclesByColor(color);
     }
 
     public static void processGetByMileageRequest(){}
