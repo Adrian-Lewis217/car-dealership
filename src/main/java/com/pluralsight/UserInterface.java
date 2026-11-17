@@ -90,7 +90,7 @@ public class UserInterface {
         max = input.nextInt();
         input.nextLine();
 
-        // calling getByPriceRequest() from Dealership call
+        // calling getVehiclesByYear() from Dealership call
         Dealership.getVehiclesByYear(min,max);
     }
 
@@ -105,9 +105,33 @@ public class UserInterface {
         Dealership.getVehiclesByColor(color);
     }
 
-    public static void processGetByMileageRequest(){}
+    public static void processGetByMileageRequest(){
+        Scanner input = new Scanner(System.in);
+        int min;
+        int max;
 
-    public static void processGetByVehicleTypeRequest(){}
+        // Prompt user for their min and max mileage
+        System.out.print("Enter min mileage");
+        min = input.nextInt();
+        input.nextLine();
+        System.out.print("Enter max mileage");
+        max = input.nextInt();
+        input.nextLine();
+
+        // calling getVehiclesByMileage() from Dealership call
+        Dealership.getVehiclesByMileage(min,max);
+    }
+
+    public static void processGetByVehicleTypeRequest(){
+        Scanner input = new Scanner(System.in);
+
+        // Prompt user for color of vehicle
+        System.out.print("Enter the color of vehicle");
+        String vehicleType = input.nextLine();
+
+        // calling getVehiclesByType() from Dealership call
+        Dealership.getVehiclesByType(vehicleType);
+    }
 
     public static void processGetAllVehiclesRequest(){
         // Get the full inventory from file and display all vehicles
