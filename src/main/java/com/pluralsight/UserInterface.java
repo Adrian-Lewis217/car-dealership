@@ -139,9 +139,19 @@ public class UserInterface {
         displayVehicles(inventory);
     }
 
-    public static void processAddVehiclesRequest(){}
+    public static void processAddVehiclesRequest(){
+        Dealership.addVehicles();
+    }
 
-    public static void processRemoveVehiclesRequest(){}
+    public static void processRemoveVehiclesRequest(){
+        Scanner input = new Scanner(System.in);
+        // Remove vehicle by entering Vin
+        System.out.print("Enter Vehicle's VIN to remove: ");
+        int vehicleVIN = input.nextInt();
+        input.nextLine();
+
+        Dealership.removeVehicles(vehicleVIN);
+    }
     
     // Helper Methods
     private void init(){

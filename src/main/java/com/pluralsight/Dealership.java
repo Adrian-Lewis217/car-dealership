@@ -98,7 +98,7 @@ public class Dealership {
         return matchingType;
     }
 
-    public static List<Vehicle> getAllVehicles(String fileName){
+    public static ArrayList<Vehicle> getAllVehicles(String fileName){
         // Display all vehicles in file
 
         // Clears for each call to avoid duplicates
@@ -179,7 +179,7 @@ public class Dealership {
         }
     }
 
-    public static void removeVehicles(List<Vehicle> vehicle){
+    public static void removeVehicles(int vehicle){
         Scanner input = new Scanner(System.in);
         String fileName = "inventory.csv";
 
@@ -187,13 +187,9 @@ public class Dealership {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
 
-            // Remove vehicle by entering Vin
-            System.out.print("Enter Vehicle's VIN to remove: ");
-            int vinRemove = input.nextInt();
-            input.nextLine();
 
             // Remove vehicle from inventory if VIN matches
-            inventory.removeIf(vehicle1 -> vehicle1.getVin() == vinRemove);
+            inventory.removeIf(vehicle1 -> vehicle1.getVin() == vehicle);
 
             // Rewrite the file after removing
             Dealership dealership = null;
