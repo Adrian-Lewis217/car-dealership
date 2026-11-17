@@ -76,9 +76,27 @@ public class UserInterface {
         Dealership.getVehiclesByMakeModel(make,model);
     }
 
-    public static void processGetByYearRequest(){}
+    public static void processGetByYearRequest(){
+        Scanner input = new Scanner(System.in);
+        // Try LocalDate for year, not int
+        int min;
+        int max;
 
-    public static void processGetByColorRequest(){}
+        // Prompt user for their min and max price
+        System.out.print("Enter min year");
+        min = input.nextInt();
+        input.nextLine();
+        System.out.print("Enter max year");
+        max = input.nextInt();
+        input.nextLine();
+
+        // calling getByPriceRequest() from Dealership call
+        Dealership.getVehiclesByYear(min,max);
+    }
+
+    public static void processGetByColorRequest(){
+
+    }
 
     public static void processGetByMileageRequest(){}
 
