@@ -22,8 +22,18 @@ public class Dealership {
         this.phone = phone;
     }
 
-    // Getter
-    // Setter
+    public String getName() {
+        return name;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
     // Methods
     public static List<Vehicle> getVehiclesByPrice(BigDecimal min, BigDecimal max){
 
@@ -141,6 +151,7 @@ public class Dealership {
 
         return inventory;
     }
+
     public static void addVehicles(){
         Scanner input = new Scanner(System.in);
         String fileName = "inventory.csv";
@@ -184,12 +195,15 @@ public class Dealership {
 
         // prompt user for vehicle info
         try {
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
-
-            DealershipFileManager.saveDealership();
+            Dealership dealership = DealershipFileManager.getDealership();
 
             // Remove vehicle from inventory if VIN matches
             inventory.removeIf(vehicle1 -> vehicle1.getVin() == vehicle);
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
+
+            // add back the header and vehicles after rewrite
+            DealershipFileManager.saveDealership(dealership);
 
             for (Vehicle vehicle1 : inventory) {
                 bw.write(

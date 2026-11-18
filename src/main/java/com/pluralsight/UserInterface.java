@@ -77,6 +77,7 @@ public class UserInterface {
         String make = input.nextLine();
         System.out.print("Enter the model of vehicle: ");
         String model = input.nextLine();
+        input.nextLine();
 
         // calling getVehiclesByMakeModel() from Dealership call
         ArrayList<Vehicle> results = new ArrayList<>(Dealership.getVehiclesByMakeModel(make,model));
@@ -182,5 +183,4 @@ public class UserInterface {
             System.out.println("ERROR: " + e.getMessage());
         }
     }
-    // ToString
 }

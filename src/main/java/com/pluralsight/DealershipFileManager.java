@@ -1,14 +1,8 @@
 package com.pluralsight;
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class DealershipFileManager {
-    // Constructor
-
-    // Getter
-
-    // Setter
 
     // Methods
     public static Dealership getDealership() {
@@ -39,16 +33,15 @@ public class DealershipFileManager {
         }
         return dealership;
     }
-    public static void saveDealership(){
-        String fileName = "";
+    public static void saveDealership(Dealership dealership){
+        String fileName = "inventory.csv";
         try {
             // Save the Dealership from the CSV File
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
-            bw.write("D & B Used Cars|111 Old Benbrook Rd|817-555-5555");
+            bw.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
             bw.newLine();
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-
     }
 }

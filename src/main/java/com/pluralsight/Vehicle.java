@@ -91,11 +91,7 @@ public class Vehicle {
         this.price = price;
     }
 
-    // Methods
-
     // ToString
-
-
     @Override
     public String toString() {
         return vin + + year + "|" + make + "|" + model + "|" + vehicleType + "|" + color + "|" + odometer + "|" + price;

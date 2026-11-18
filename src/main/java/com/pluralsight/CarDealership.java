@@ -11,8 +11,5 @@ public class CarDealership {
         // Display User Interface
         UserInterface ui = new UserInterface();
         ui.display();
-
-
-
     }
 }
