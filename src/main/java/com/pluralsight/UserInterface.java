@@ -78,7 +78,7 @@ public class UserInterface {
     public static void processGetByMakeModelRequest(){
         Scanner input = new Scanner(System.in);
 
-        // Prompt user for their min and max price
+        // Prompt user for their make and model of vehicle
         System.out.print("Enter the make of vehicle: ");
         String make = input.nextLine();
         System.out.print("Enter the model of vehicle: ");
@@ -97,7 +97,7 @@ public class UserInterface {
         int min;
         int max;
 
-        // Prompt user for their min and max price
+        // Prompt user for their min and max year
         System.out.print("Enter min year: ");
         min = input.nextInt();
         input.nextLine();
@@ -150,7 +150,7 @@ public class UserInterface {
     public static void processGetByVehicleTypeRequest(){
         Scanner input = new Scanner(System.in);
 
-        // Prompt user for color of vehicle
+        // Prompt user for type of vehicle
         System.out.print("Enter the vehicle type: ");
         String vehicleType = input.nextLine();
         System.out.println();

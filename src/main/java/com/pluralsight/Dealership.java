@@ -44,7 +44,7 @@ public class Dealership {
     public static List<Vehicle> getVehiclesByMakeModel(String make,String model){
         List<Vehicle> matchingMakeModel = new ArrayList<>();
 
-        // Search for vehicles with matching make or model
+        // Search for vehicles with matching make and model
         for (Vehicle vehicle : inventory) {
             if (vehicle.getMake().equalsIgnoreCase(make) && vehicle.getModel().equalsIgnoreCase(model)){
                 matchingMakeModel.add(vehicle);
@@ -80,7 +80,7 @@ public class Dealership {
     public static List<Vehicle> getVehiclesByMileage(int min,int max){
         List<Vehicle> matchingMileage = new ArrayList<>();
 
-        // Search for vehicles in between min and max year
+        // Search for vehicles in between min and max mileage
         for (Vehicle vehicle : inventory) {
             if (vehicle.getOdometer() >= min && vehicle.getOdometer() <= max){
                 matchingMileage.add(vehicle);
@@ -146,6 +146,7 @@ public class Dealership {
 
     public static void addVehicles(){
         Scanner input = new Scanner(System.in);
+
         String fileName = "inventory.csv";
 
         // prompt user for vehicle info
