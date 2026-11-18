@@ -1,8 +1,8 @@
 package com.pluralsight;
 
-public class CarDealership {
+public class Program {
 
-    public static final String FILE_NAME = "inventory.csv";
+    public static String FILE_NAME = "inventory.csv";
 
     public static void main(String[] args) {
         // Load the inventory

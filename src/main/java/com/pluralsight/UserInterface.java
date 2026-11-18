@@ -18,9 +18,11 @@ public class UserInterface {
 
         // Menu
         boolean running = true;
+
         while (running){
             // Prompts
             System.out.println("Please choose a option by number.");
+            System.out.println("---------------------------------");
             System.out.println("1. Find vehicles within a price range.");
             System.out.println("2. Find vehicles by make / model.");
             System.out.println("3. Find vehicles by year range.");
@@ -31,8 +33,10 @@ public class UserInterface {
             System.out.println("8. Add a vehicle.");
             System.out.println("9. Remove a vehicle.");
             System.out.println("10. Quit");
+            System.out.println("---------------------------------");
             System.out.print("Your Choose: ");
             String option = input.nextLine();
+            System.out.println();
 
             // Switch Statement
             switch (option){
@@ -63,10 +67,12 @@ public class UserInterface {
         System.out.print("Enter your max price: ");
         max = input.nextBigDecimal();
         input.nextLine();
+        System.out.println();
 
         // calling getByPriceRequest() from Dealership call
         ArrayList<Vehicle> results = new ArrayList<>(Dealership.getVehiclesByPrice(min,max));
         displayVehicles(results);
+        System.out.println();
     }
 
     public static void processGetByMakeModelRequest(){
@@ -78,15 +84,16 @@ public class UserInterface {
         System.out.print("Enter the model of vehicle: ");
         String model = input.nextLine();
         input.nextLine();
+        System.out.println();
 
         // calling getVehiclesByMakeModel() from Dealership call
         ArrayList<Vehicle> results = new ArrayList<>(Dealership.getVehiclesByMakeModel(make,model));
         displayVehicles(results);
+        System.out.println();
     }
 
     public static void processGetByYearRequest(){
         Scanner input = new Scanner(System.in);
-        // Try LocalDate for year, not int
         int min;
         int max;
 
@@ -97,10 +104,12 @@ public class UserInterface {
         System.out.print("Enter max year: ");
         max = input.nextInt();
         input.nextLine();
+        System.out.println();
 
         // calling getVehiclesByYear() from Dealership call
         ArrayList<Vehicle> results = new ArrayList<>(Dealership.getVehiclesByYear(min,max));
         displayVehicles(results);
+        System.out.println();
 
     }
 
@@ -110,10 +119,12 @@ public class UserInterface {
         // Prompt user for color of vehicle
         System.out.print("Enter the color of vehicle: ");
         String color = input.nextLine();
+        System.out.println();
 
         // calling getVehiclesByColor() from Dealership call
         ArrayList<Vehicle> results = new ArrayList<>(Dealership.getVehiclesByColor(color));
         displayVehicles(results);
+        System.out.println();
     }
 
     public static void processGetByMileageRequest(){
@@ -128,10 +139,12 @@ public class UserInterface {
         System.out.print("Enter max mileage: ");
         max = input.nextInt();
         input.nextLine();
+        System.out.println();
 
         // calling getVehiclesByMileage() from Dealership call
         ArrayList<Vehicle> results = new ArrayList<>(Dealership.getVehiclesByMileage(min,max));
         displayVehicles(results);
+        System.out.println();
     }
 
     public static void processGetByVehicleTypeRequest(){
@@ -140,20 +153,25 @@ public class UserInterface {
         // Prompt user for color of vehicle
         System.out.print("Enter the vehicle type: ");
         String vehicleType = input.nextLine();
+        System.out.println();
 
         // calling getVehiclesByType() from Dealership call
         ArrayList<Vehicle> results = new ArrayList<>(Dealership.getVehiclesByType(vehicleType));
         displayVehicles(results);
+        System.out.println();
     }
 
     public static void processGetAllVehiclesRequest(){
         // Get the full inventory from file and display all vehicles
         ArrayList<Vehicle> inventory = Dealership.getAllVehicles("inventory.csv");
         displayVehicles(inventory);
+        System.out.println();
     }
 
     public static void processAddVehiclesRequest(){
         Dealership.addVehicles();
+        System.out.println("Vehicle has been added");
+        System.out.println();
     }
 
     public static void processRemoveVehiclesRequest(){
@@ -163,8 +181,11 @@ public class UserInterface {
         System.out.print("Enter Vehicle's VIN to remove: ");
         int vehicleVIN = input.nextInt();
         input.nextLine();
+        System.out.println();
 
         Dealership.removeVehicles(vehicleVIN);
+        System.out.println("Vehicle has been removed");
+        System.out.println();
     }
     
     // Helper Methods
@@ -179,6 +200,7 @@ public class UserInterface {
             for (Vehicle vehicle : inventory) {
                 System.out.println(vehicle);
             }
+            System.out.println();
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }

@@ -33,12 +33,17 @@ public class DealershipFileManager {
         }
         return dealership;
     }
+
     public static void saveDealership(Dealership dealership){
         String fileName = "inventory.csv";
+        // D & B Used Cars|111 Old Benbrook Rd|817-555-5555
+        String name = "D & B Used Cars";
+        String address = "111 Old Benbrook Rd";
+        String phoneNumber = "817-555-5555";
         try {
-            // Save the Dealership from the CSV File
+            // Remake the header for Dealership from the CSV File
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
-            bw.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
+            bw.write(name + "|" + address + "|" + phoneNumber);
             bw.newLine();
 
             for (Vehicle vehicle : Dealership.getInventory()) {

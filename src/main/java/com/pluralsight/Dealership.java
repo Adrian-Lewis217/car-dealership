@@ -22,18 +22,6 @@ public class Dealership {
         this.phone = phone;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
     public static ArrayList<Vehicle> getInventory() {
         return inventory;
     }
