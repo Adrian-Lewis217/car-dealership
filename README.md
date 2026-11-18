@@ -104,10 +104,9 @@ Each vehicle has eight sections that owners can enter to find any of their vehic
         }
     }
 ```
-This code is a method that calls to the DealershipFileManager class to receive the name of the dealership and rewrite the file, after the owner or employee remove a vehicle from their inventory.
-I had some issues at first with the two methods and making them both work together. 
-After noticing my mistake, I rewrite this way so both are used separately and work to update the file. 
-This made working with both classes easier and improve my understanding on how to structure the methods. 
+This code is a method that calls to the DealershipFileManager class to receive the name of the dealership then rewrite the file; when the owner or employee remove a vehicle from their inventory.
+I write it this way so both classes are used separately to update the file. 
+This made working with both methods easier, and improve my understanding on how to write methods, and remove items from files for future work. 
 ## Future Work
 
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
