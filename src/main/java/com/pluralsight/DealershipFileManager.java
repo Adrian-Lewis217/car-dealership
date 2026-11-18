@@ -40,6 +40,16 @@ public class DealershipFileManager {
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
             bw.write(dealership.getName() + "|" + dealership.getAddress() + "|" + dealership.getPhone());
             bw.newLine();
+
+            for (Vehicle vehicle : Dealership.getInventory()) {
+                bw.write(
+                        vehicle.getVin() + "|" + vehicle.getYear() + "|" + vehicle.getMake() + "|" +
+                                vehicle.getModel() + "|" + vehicle.getVehicleType() + "|" +
+                                vehicle.getColor() + "|" + vehicle.getOdometer() + "|" + vehicle.getPrice()
+                );
+                bw.newLine();
+            }
+            bw.close();
         } catch (IOException e) {
             System.out.println("ERROR: " + e.getMessage());
         }

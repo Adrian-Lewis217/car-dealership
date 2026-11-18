@@ -34,6 +34,10 @@ public class Dealership {
         return phone;
     }
 
+    public static ArrayList<Vehicle> getInventory() {
+        return inventory;
+    }
+
     // Methods
     public static List<Vehicle> getVehiclesByPrice(BigDecimal min, BigDecimal max){
 
@@ -191,7 +195,6 @@ public class Dealership {
     }
 
     public static void removeVehicles(int vehicle){
-        String fileName = "inventory.csv";
 
         // prompt user for vehicle info
         try {
@@ -200,20 +203,8 @@ public class Dealership {
             // Remove vehicle from inventory if VIN matches
             inventory.removeIf(vehicle1 -> vehicle1.getVin() == vehicle);
 
-            BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
-
             // add back the header and vehicles after rewrite
             DealershipFileManager.saveDealership(dealership);
-
-            for (Vehicle vehicle1 : inventory) {
-                bw.write(
-                        vehicle1.getVin() + "|" + vehicle1.getYear() + "|" + vehicle1.getMake() + "|" +
-                                vehicle1.getModel() + "|" + vehicle1.getVehicleType() + "|" +
-                                vehicle1.getColor() + "|" + vehicle1.getOdometer() + "|" + vehicle1.getPrice()
-                        );
-                bw.newLine();
-            }
-            bw.close();
 
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
