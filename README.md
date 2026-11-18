@@ -75,9 +75,11 @@ Each vehicle has eight sections that users can enter to find the car for them. T
      Optional GIF: LICEcap (free, Windows and Mac, <https://www.cockos.com/licecap/>) records a region of the
      screen straight to a .gif. Keep it under 10 seconds and under 10 MB, save it into `images`. -->
 
-![Main menu](images/menu.png)
+![Main menu](images/home.png)
 
-![One feature in action](images/feature.png)
+![One feature in action](images/remove.png)
+
+![One feature in action](images/search-type.png)
 
 ## A piece of code I am proud of
 
@@ -86,22 +88,37 @@ Each vehicle has eight sections that users can enter to find the car for them. T
      demo day and what you talk about in an interview. -->
 
 ```java
+ public static void removeVehicles(int vehicle){
+        
+        try {
+            Dealership dealership = DealershipFileManager.getDealership();
 
+            // Remove vehicle from inventory if VIN matches
+            inventory.removeIf(vehicle1 -> vehicle1.getVin() == vehicle);
+
+            // add back the header and vehicles after rewrite
+            DealershipFileManager.saveDealership(dealership);
+
+        } catch (Exception e) {
+            System.out.println("ERROR: " + e.getMessage());
+        }
+    }
 ```
-
+This code is a method for removing a vehicle from the inventory and CSV file. At first, I write it to rewrite the file after clearing it, but changed it when I noticed my mistake. 
+I choose to rewrite it this way, so method get the dealership then clear the file, and start the file with its header.
 ## Future Work
 
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
 
 - add a way for users to find vehicles by only entering make or model
-- add a second switch statement to concise the number of option in home screen
+- add a second switch statement to concise the number of options in home screen
 
 ## Resources
 
 <!-- What helped you: the workbook, the week's hub pages, a tutorial, a documentation page. Real links. -->
 
 - Java YearUp Fall 2026 hub: <https://raymaroun.github.io/yearup-java-fall2026/>
-- AI agent
+- AI agent for Research: <https://copilot.cloud.microsoft/chat/agent/T_20b53e3f-d488-d128-27fc-440ed32e7a02.eade2051-4773-4cb0-aa3e-b17cdf11ebd4.gpt.17fde386-a7a1-4dd0-a089-a0b0a70bb567?fromcode=cmmu8qodiz1&lhredirected=1&es=AutoSignIn>
 
 ## Author
 

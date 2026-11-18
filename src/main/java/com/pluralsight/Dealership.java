@@ -184,7 +184,6 @@ public class Dealership {
 
     public static void removeVehicles(int vehicle){
 
-        // prompt user for vehicle info
         try {
             Dealership dealership = DealershipFileManager.getDealership();
 
