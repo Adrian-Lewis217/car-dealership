@@ -11,34 +11,35 @@ public class DealershipFileManager {
     // Setter
 
     // Methods
-    public static Dealership getDealership(){
+    public static Dealership getDealership() {
+        Dealership dealership = null;
+
         try {
             String fileName = "inventory.csv";
-
             BufferedReader br = new BufferedReader(new FileReader(fileName));
 
             String line;
 
-            if ((line = br.readLine()) != null){
+            if ((line = br.readLine()) != null) {
 
                 String[] sections = line.split("\\|");
 
                 String name = sections[0];
                 String address = sections[1];
                 String phone = sections[2];
-                ArrayList<Vehicle> inventory = new ArrayList<>();
 
                 // save the dealership from CSV file
-                //dealership = new Dealership(name,address,phone);
+                dealership = new Dealership(name, address, phone);
+
             }
             br.close();
 
         } catch (Exception e) {
             System.out.println("ERROR: " + e.getMessage());
         }
-        return null;
+        return dealership;
     }
-    public static void saveDealership(Dealership dealership){
+    public static void saveDealership(){
         String fileName = "";
         try {
             // Save the Dealership from the CSV File
@@ -50,6 +51,4 @@ public class DealershipFileManager {
         }
 
     }
-
-    // ToString
 }

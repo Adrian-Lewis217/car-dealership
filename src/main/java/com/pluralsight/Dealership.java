@@ -130,7 +130,7 @@ public class Dealership {
                 String vehicleType = sections[4];
                 String color = sections[5];
                 int odometer = Integer.parseInt(sections[6]);
-                BigDecimal price = BigDecimal.valueOf(Double.parseDouble(sections[7]));
+                BigDecimal price = new BigDecimal(sections[7]);
                 inventory.add(new Vehicle(vin,year,make,model,vehicleType,color,odometer,price));
             }
             br.close();
@@ -180,20 +180,16 @@ public class Dealership {
     }
 
     public static void removeVehicles(int vehicle){
-        Scanner input = new Scanner(System.in);
         String fileName = "inventory.csv";
 
         // prompt user for vehicle info
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
 
+            DealershipFileManager.saveDealership();
 
             // Remove vehicle from inventory if VIN matches
             inventory.removeIf(vehicle1 -> vehicle1.getVin() == vehicle);
-
-            // Rewrite the file after removing
-            Dealership dealership = null;
-            DealershipFileManager.saveDealership(dealership);
 
             for (Vehicle vehicle1 : inventory) {
                 bw.write(

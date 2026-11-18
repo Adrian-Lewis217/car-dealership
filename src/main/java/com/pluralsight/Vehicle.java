@@ -1,8 +1,6 @@
 package com.pluralsight;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
 
 public class Vehicle {
     private int vin;
@@ -13,7 +11,6 @@ public class Vehicle {
     private String color;
     private int odometer;
     private BigDecimal price;
-    private List<Vehicle> vehicles;
 
     // Constructor
     public Vehicle(int vin, int year, String make, String model, String vehicleType, String color, int odometer, BigDecimal price) {
@@ -98,18 +95,9 @@ public class Vehicle {
 
     // ToString
 
+
     @Override
     public String toString() {
-        return "Vehicle{" +
-                "vin=" + vin +
-                ", year=" + year +
-                ", make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", vehicleType='" + vehicleType + '\'' +
-                ", color='" + color + '\'' +
-                ", odometer=" + odometer +
-                ", price=" + price +
-                ", vehicles=" + vehicles +
-                '}';
+        return vin + + year + "|" + make + "|" + model + "|" + vehicleType + "|" + color + "|" + odometer + "|" + price;
     }
 }
