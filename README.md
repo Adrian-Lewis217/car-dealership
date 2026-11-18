@@ -1,4 +1,4 @@
-# Project Title
+# Dealership Management App
 
 <!-- HOW TO USE THIS TEMPLATE
      Save it as README.md at the root of your project, next to pom.xml. Replace every comment like this one
@@ -8,19 +8,14 @@
 
 <!-- One sentence under the title: what the app is, for whom.
      Example: A console app that keeps a store's inventory in a csv file and lets a clerk search it. -->
+A console app that keeps a car dealership's vehicle inventory in  a CSV file and lets users search for them.
 
 ## Description of the Project
 
 <!-- Three to five sentences. What the application does, who uses it, what problem it solves.
      Write it for someone who has never seen the workbook: a recruiter, a classmate, you in six months. -->
-
-## Class Diagram
-
-<!-- OPTIONAL. Only when the project asks for one (Capstone 2 onward). Export the diagram as a PNG into the
-     images folder and keep the line below. If your project has no class diagram, delete this whole section,
-     heading included. -->
-
-![Class Diagram](images/class-diagram.png)
+This application allows users to search for specific vehicles in the dealership's inventory using information about the vehicles.
+Each vehicle has eight sections that users can enter to find the car for them. This can help employees search through their inventory faster, and lets them add or remove vehicles to updated their inventory.
 
 ## Features
 
@@ -31,9 +26,9 @@
      - Shows every product in the store
      - Searches products by name (bonus) -->
 
--
--
--
+- search by type
+- add or remove vehicles
+- show all vehicles
 
 ## User Stories
 
@@ -41,8 +36,8 @@
      As a [type of user], I want [some goal] so that [some reason].
      Same text as the cards on your GitHub project board. -->
 
-- As a ..., I want ..., so that ...
-- As a ..., I want ..., so that ...
+- As a owner, I want to search through my inventory, so that I see all the vehicles in my dealership
+- As a owner, I want to add or remove vehicles, so that I can update my inventory
 
 ## Setup
 
@@ -58,17 +53,6 @@
 3. Wait for IntelliJ to finish indexing (progress bar at the bottom).
 4. Open `src/main/java/com/pluralsight/YourMainClassName.java`. <!-- replace YourMainClassName with the class that has main -->
 5. Right-click inside the file and choose Run 'YourMainClassName.main()'.
-
-### Data and configuration
-
-<!-- OPTIONAL. Anything the program needs that is not code: data files and where they must sit, files the
-     program creates, a database script to run first, a settings file to edit (connection, port).
-     If there is nothing, delete this subsection, heading included.
-     Example:
-     - `inventory.csv` sits at the project root, next to `pom.xml`. The program reads it at start.
-     - `logs.txt` is created by the program at the project root on the first run. -->
-
--
 
 ## Technologies Used
 
@@ -109,24 +93,24 @@
 
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
 
--
--
+- add a way for users to find vehicles by only entering make or model
+- add a second switch statement to concise the number of option in home screen
 
 ## Resources
 
 <!-- What helped you: the workbook, the week's hub pages, a tutorial, a documentation page. Real links. -->
 
 - Java YearUp Fall 2026 hub: <https://raymaroun.github.io/yearup-java-fall2026/>
--
+- AI agent
 
 ## Author
 
 <!-- Your name and, if you like, your GitHub profile link. For a team workshop, one line per person with what each one built. -->
 
-- **Your Name**
+- **Adrian Lewis**
 
 ## Thanks
 
 <!-- Optional. The people who helped: the instructor, a classmate who debugged with you, a mentor. -->
 
-- Thank you to ... for ...
+- Thank you to Raymond for the resource in GitHub
