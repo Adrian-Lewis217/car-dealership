@@ -8,14 +8,14 @@
 
 <!-- One sentence under the title: what the app is, for whom.
      Example: A console app that keeps a store's inventory in a csv file and lets a clerk search it. -->
-A console app that keeps a car dealership's vehicle inventory in  a CSV file and lets users search for them.
+A console app that keeps a car dealership's vehicle inventory in a CSV file and lets owners search for them.
 
 ## Description of the Project
 
 <!-- Three to five sentences. What the application does, who uses it, what problem it solves.
      Write it for someone who has never seen the workbook: a recruiter, a classmate, you in six months. -->
-This application allows users to search for specific vehicles in the dealership's inventory using information about the vehicles.
-Each vehicle has eight sections that users can enter to find the car for them. This can help employees search through their inventory faster, and lets them add or remove vehicles to updated their inventory.
+This application allows owners to search for specific vehicles in their dealership's inventory using information about the vehicles.
+Each vehicle has eight sections that owners can enter to find any of their vehicles in the file. This can help owners search through their inventory faster, and lets them add or remove vehicles to updated their inventory.
 
 ## Features
 
@@ -26,9 +26,9 @@ Each vehicle has eight sections that users can enter to find the car for them. T
      - Shows every product in the store
      - Searches products by name (bonus) -->
 
-- search by type
-- add or remove vehicles
-- show all vehicles
+- search for vehicle(s) by type, color, price, or year
+- add or remove vehicles from inventory
+- show all vehicles in CSV file
 
 ## User Stories
 
@@ -104,21 +104,24 @@ Each vehicle has eight sections that users can enter to find the car for them. T
         }
     }
 ```
-This code is a method for removing a vehicle from the inventory and CSV file. At first, I write it to rewrite the file after clearing it, but changed it when I noticed my mistake. 
-I choose to rewrite it this way, so method get the dealership then clear the file, and start the file with its header.
+This code is a method that calls to the DealershipFileManager class to receive the name of the dealership and rewrite the file, after the owner or employee remove a vehicle from their inventory.
+I had some issues at first with the two methods and making them both work together. 
+After noticing my mistake, I rewrite this way so both are used separately and work to update the file. 
+This made working with both classes easier and improve my understanding on how to structure the methods. 
 ## Future Work
 
 <!-- What you would add or fix next, one bullet each. Unfinished bonuses belong here. -->
 
-- add a way for users to find vehicles by only entering make or model
+- add a way for owners to find vehicles by only entering make or model
 - add a second switch statement to concise the number of options in home screen
+- make the saveDealership() able to save any name for header
 
 ## Resources
 
 <!-- What helped you: the workbook, the week's hub pages, a tutorial, a documentation page. Real links. -->
 
 - Java YearUp Fall 2026 hub: <https://raymaroun.github.io/yearup-java-fall2026/>
-- AI agent for Research: <https://copilot.cloud.microsoft/chat/agent/T_20b53e3f-d488-d128-27fc-440ed32e7a02.eade2051-4773-4cb0-aa3e-b17cdf11ebd4.gpt.17fde386-a7a1-4dd0-a089-a0b0a70bb567?fromcode=cmmu8qodiz1&lhredirected=1&es=AutoSignIn>
+- AI agent: <https://copilot.cloud.microsoft/chat/agent/T_20b53e3f-d488-d128-27fc-440ed32e7a02.eade2051-4773-4cb0-aa3e-b17cdf11ebd4.gpt.17fde386-a7a1-4dd0-a089-a0b0a70bb567?fromcode=cmmu8qodiz1&lhredirected=1&es=AutoSignIn>
 
 ## Author
 
